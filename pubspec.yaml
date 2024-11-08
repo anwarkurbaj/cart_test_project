@@ -1,4 +1,4 @@
-name: sp1_e_commerce
+name: cart_project
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -47,9 +47,10 @@ dependencies:
   connectivity_plus: ^3.0.2
   provider: ^6.0.5
   flutter_svg: ^1.0.3
-  location: ^5.0.0
-  geocoding: ^2.1.0
-  google_maps_flutter: ^2.3.0
+  flutter_rating_bar: ^4.0.1
+  # location: ^5.0.0
+  # geocoding: ^2.1.0
+  # google_maps_flutter: ^2.3.0
 
 
   

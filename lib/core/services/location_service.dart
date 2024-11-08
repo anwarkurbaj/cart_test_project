@@ -1,59 +1,59 @@
-import 'package:bot_toast/bot_toast.dart';
-import 'package:geocoding/geocoding.dart' as geo;
-import 'package:location/location.dart';
-import 'package:sp1_e_commerce/ui/shared/utils.dart';
+// import 'package:bot_toast/bot_toast.dart';
+// import 'package:geocoding/geocoding.dart' as geo;
+// import 'package:location/location.dart';
 
-class LocationService {
-  Location location = new Location();
 
-  Future<LocationData?> getCurrentLocation({bool? showLoader = true}) async {
-    LocationData _locationData;
+// class LocationService {
+//   Location location = new Location();
 
-    if (!await isServiceEnabled()) return null;
+//   Future<LocationData?> getCurrentLocation({bool? showLoader = true}) async {
+//     LocationData _locationData;
 
-    if (!await isPermissionGranted()) return null;
+//     if (!await isServiceEnabled()) return null;
 
-    if (showLoader!) customLoader();
+//     if (!await isPermissionGranted()) return null;
 
-    _locationData = await location.getLocation();
+//     if (showLoader!) customLoader();
 
-    BotToast.closeAllLoading();
+//     _locationData = await location.getLocation();
 
-    return _locationData;
-  }
+//     BotToast.closeAllLoading();
 
-  Future<geo.Placemark> getLocationInfo(LocationData locationData) async {
-    List<geo.Placemark> placemarks = await geo.placemarkFromCoordinates(
-        locationData.latitude ?? 0.0, locationData.longitude ?? 0.0);
+//     return _locationData;
+//   }
 
-    return placemarks.first;
-  }
+//   Future<geo.Placemark> getLocationInfo(LocationData locationData) async {
+//     List<geo.Placemark> placemarks = await geo.placemarkFromCoordinates(
+//         locationData.latitude ?? 0.0, locationData.longitude ?? 0.0);
 
-  Future<bool> isPermissionGranted() async {
-    PermissionStatus _permissionGranted;
+//     return placemarks.first;
+//   }
 
-    _permissionGranted = await location.hasPermission();
-    if (_permissionGranted == PermissionStatus.denied) {
-      _permissionGranted = await location.requestPermission();
-      if (_permissionGranted != PermissionStatus.granted) {
-        return false;
-      }
-    }
+//   Future<bool> isPermissionGranted() async {
+//     PermissionStatus _permissionGranted;
 
-    return true;
-  }
+//     _permissionGranted = await location.hasPermission();
+//     if (_permissionGranted == PermissionStatus.denied) {
+//       _permissionGranted = await location.requestPermission();
+//       if (_permissionGranted != PermissionStatus.granted) {
+//         return false;
+//       }
+//     }
 
-  Future<bool> isServiceEnabled() async {
-    bool _serviceEnabled;
+//     return true;
+//   }
 
-    _serviceEnabled = await location.serviceEnabled();
-    if (!_serviceEnabled) {
-      _serviceEnabled = await location.requestService();
-      if (!_serviceEnabled) {
-        return false;
-      }
-    }
+//   Future<bool> isServiceEnabled() async {
+//     bool _serviceEnabled;
 
-    return true;
-  }
-}
+//     _serviceEnabled = await location.serviceEnabled();
+//     if (!_serviceEnabled) {
+//       _serviceEnabled = await location.requestService();
+//       if (!_serviceEnabled) {
+//         return false;
+//       }
+//     }
+
+//     return true;
+//   }
+// }

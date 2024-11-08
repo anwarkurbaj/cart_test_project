@@ -1,45 +1,38 @@
+import 'package:cart_project/ui/shared/utils.dart';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import 'splash_controller.dart';
 
-class SplashView extends StatefulWidget {
-  const SplashView({super.key});
+// ignore: must_be_immutable
+class SplashView extends StatelessWidget {
+  SplashView({super.key});
 
-  @override
-  State<SplashView> createState() => _SplashViewState();
-}
-
-class _SplashViewState extends State<SplashView> {
-  //!  Navigator.pushAndRemoveUntil =>  Get.offAll(page)
-  //* Navigator.push(context, route) =>  Get.to(page)
-  //? Navigator.pushReplacement(context, route) =>  Get.off(page)
-  //todo Navigator.pop(context) =>  Get.back()
-
-  @override
-  void initState() {
-    
-    super.initState();
-  }
+  //!
+  SplashController controller = Get.put(SplashController());
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return SafeArea(
-        child: Scaffold(
-      body: Stack(
-        children: [
-          Image.asset(
-            'assets/images/pngs/socialhub.png',
-            fit: BoxFit.fitWidth,
-            width: size.width,
-          ),
-          /*Center(
-              child: Image.asset(
-            'assets/images/pngs/logo.png',
-            width: size.width / 1.5,
-            height: size.width / 1.5,
-          )), */
-        ],
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Image.asset(
+              'assets/images/pngs/main_background.png',
+              fit: BoxFit.cover,
+              width: screenWidth(1),
+            ),
+            Center(
+                child: Image.asset(
+              'assets/images/pngs/logo.png',
+              width: screenWidth(2),
+            )),
+          ],
+        ),
       ),
-    ));
+    );
   }
 }
+
+// InkWell(ontap:(){})

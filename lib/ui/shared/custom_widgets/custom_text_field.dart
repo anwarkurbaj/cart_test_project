@@ -1,6 +1,6 @@
+import 'package:cart_project/ui/shared/colors.dart';
 import 'package:flutter/material.dart';
 
-import 'package:sp1_e_commerce/ui/shared/colors.dart';
 
 class CustomTextFeild extends StatelessWidget {
   final IconData? preIcon;

@@ -1,14 +1,21 @@
 import 'package:bot_toast/bot_toast.dart';
+import 'package:cart_project/app/my_app_controller.dart';
+import 'package:cart_project/core/data/repository/shared_prefrence_repository.dart';
+import 'package:cart_project/core/services/connectivity_service.dart';
+import 'package:cart_project/core/translation/app_translation.dart';
+import 'package:cart_project/ui/shared/utils.dart';
+import 'package:cart_project/ui/views/login_view/login_view.dart';
+import 'package:cart_project/ui/views/main_view/allprodect_view/allprodect_view.dart';
+import 'package:cart_project/ui/views/main_view/cart_view/cart_view.dart';
+import 'package:cart_project/ui/views/main_view/home_view/home_view.dart';
+import 'package:cart_project/ui/views/main_view/main_view.dart';
+
+import 'package:cart_project/ui/views/splash_view/splash_view.dart';
+import 'package:cart_project/ui/views/wxample_view/example_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-import 'package:sp1_e_commerce/app/my_app_controller.dart';
-import 'package:sp1_e_commerce/core/data/repository/shared_prefrence_repository.dart';
-import 'package:sp1_e_commerce/core/services/connectivity_service.dart';
-import 'package:sp1_e_commerce/core/translation/app_translation.dart';
-import 'package:sp1_e_commerce/ui/shared/utils.dart';
 
-import 'package:sp1_e_commerce/ui/views/splash_view/splash_view.dart';
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
@@ -31,7 +38,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: SplashView(),
+        home: LoginView()
       ),
     );
   }

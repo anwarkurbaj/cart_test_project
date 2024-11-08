@@ -1,8 +1,9 @@
 import 'dart:convert';
 
-import 'package:sp1_e_commerce/core/data/models/product_info.dart';
+import 'package:cart_project/core/data/models/product_info.dart';
 
 class CartModel {
+  
   ProductModel? productModel;
   int? qty;
   double? total;

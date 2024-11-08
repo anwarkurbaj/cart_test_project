@@ -1,16 +1,15 @@
 import 'package:bot_toast/bot_toast.dart';
+import 'package:cart_project/core/data/repository/prodect_repositry.dart';
+import 'package:cart_project/core/data/repository/shared_prefrence_repository.dart';
+import 'package:cart_project/core/services/cart_service.dart';
+import 'package:cart_project/core/services/connectivity_service.dart';
+
+import 'package:cart_project/ui/shared/colors.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-
-
-import 'package:sp1_e_commerce/core/data/repository/shared_prefrence_repository.dart';
-import 'package:sp1_e_commerce/core/services/cart_service.dart';
-import 'package:sp1_e_commerce/core/services/connectivity_service.dart';
-import 'package:sp1_e_commerce/core/services/location_service.dart';
-import 'package:sp1_e_commerce/ui/shared/colors.dart';
 
 void customLoader() => BotToast.showCustomLoading(toastBuilder: (context) {
       return Container(
@@ -62,7 +61,9 @@ SharedPrefrenceRepository get storege => Get.find<SharedPrefrenceRepository>();
 ConnectivityService get connectivityService => Get.find<ConnectivityService>();
 Connectivity get connectivity => Get.find<Connectivity>();
 
-CartService get cartService => Get.find<CartService>();
-LocationService get locationService => Get.find<LocationService>();
+SharedPrefrenceRepository get storage => Get.find<SharedPrefrenceRepository>();
+
+ProductRepository get productRepository => Get.find<ProductRepository>();
+ CartService get cartService => Get.find<CartService>();
 
 bool isOnline = false;

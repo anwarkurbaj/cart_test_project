@@ -1,14 +1,12 @@
 import 'dart:convert';
 
+import 'package:cart_project/core/data/models/cart_model.dart';
+import 'package:cart_project/core/data/models/token_info.dart';
+import 'package:cart_project/core/enums/data_type.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sp1_e_commerce/core/data/models/cart_model.dart';
-import 'package:sp1_e_commerce/core/data/models/post_model.dart';
-import 'package:sp1_e_commerce/core/data/models/product_info.dart';
-import 'package:sp1_e_commerce/core/data/models/token_info.dart';
-import 'package:sp1_e_commerce/core/enums/data_type.dart';
-import 'package:sp1_e_commerce/main.dart';
+
 
 class SharedPrefrenceRepository {
   SharedPreferences pref = Get.find<SharedPreferences>();

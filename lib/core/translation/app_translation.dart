@@ -1,7 +1,8 @@
+import 'package:cart_project/core/translation/languages/ar_language.dart';
+import 'package:cart_project/core/translation/languages/en_languages.dart';
+import 'package:cart_project/core/translation/languages/fr_languages.dart';
 import 'package:get/get.dart';
-import 'package:sp1_e_commerce/core/translation/languages/ar_language.dart';
-import 'package:sp1_e_commerce/core/translation/languages/en_languages.dart';
-import 'package:sp1_e_commerce/core/translation/languages/fr_languages.dart';
+
 
 class AppTranslation extends Translations {
   @override
